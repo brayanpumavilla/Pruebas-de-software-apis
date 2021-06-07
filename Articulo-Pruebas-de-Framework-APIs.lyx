@@ -1,0 +1,733 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Comparativa de Frameworks de Pruebas de APIs
+\end_layout
+
+\begin_layout Author
+Bryan Puma Villa, Álvaro Gallegos, Yumin Gomez, Nicolas Telleria, Oswaldo
+ Chino
+\end_layout
+
+\begin_layout Date
+03 de Junio de 2021
+\end_layout
+
+\begin_layout Section*
+Resumen
+\end_layout
+
+\begin_layout Verse
+El API REST permite el acceso y el control remoto de la consola Security
+ Controls.
+ La función proporciona una interfaz sencilla RESTful con respuestas de
+ formato JSON ligeras que le permiten leer y escribir datos a/desde el programa.
+ Le permite automatizar muchas de las operaciones diarias, lo que le ahorra
+ mucho tiempo y esfuerzo.
+ El API REST le permite integrar completamente los controles de seguridad
+ de Ivanti en sus sistemas de orquestación y de automatización.
+\end_layout
+
+\begin_layout Section*
+Abstract
+\end_layout
+
+\begin_layout Verse
+The REST API allows remote access and control of the Security Controls console.
+ The function provides a simple RESTful interface with lightweight JSON
+ format responses that allow data to be read and written to / from the program.
+ It allows you to automate many of your daily operations, saving you a lot
+ of time and effort.
+ The REST API allows you to fully integrate Ivanti security controls into
+ your automation and orchestration systems.
+\end_layout
+
+\begin_layout Section
+Introduccion 
+\end_layout
+
+\begin_layout Verse
+Una interfaz de programación de aplicaciones (API por sus siglas en inglés)
+ es definida por la Universidad de Oxford como “un conjunto de funciones
+ y procedimientos que permiten el acceso a las funcionalidades o los datos
+ de un sistema operativo u otros servicios.” Una explicación más simple:
+ imaginémonos que estamos en un restaurante, donde interactuamos con el
+ mesero.
+ Él tomará nuestra orden, responderá nuestras preguntas y nos traerá la
+ comida a la mesa cuando esté lista.
+ El mesero está a cargo de todos los procedimientos complicados que suceden
+ detrás de escena; nosotros no nos preocupamos por la cocina, los platos,
+ las bebidas y demás.
+ De cierta manera, el mesero funciona como la API del restaurante.
+ 
+\end_layout
+
+\begin_layout Section
+Desarrollo 
+\end_layout
+
+\begin_layout Subsection
+¿Qué son las APIS? 
+\end_layout
+
+\begin_layout Verse
+Las Interfaces de Programacion de Aplicaciones (APIs por sus siglas en inglés)
+ son construcciones disponibles en los lenguajes de programación que permiten
+ a los desarrolladores crear funcionalidades complejas de una manera simple.
+ Estas abstraen el código más complejo para proveer una sintaxis más fácil
+ de usar en su lugar.
+ Como ejemplo, piensa en el suministro de electricidad de tu casa, apartamento,
+ o cualquier otro edificio.
+ Si quieres usar un electrodoméstico, simplemente lo conectas en un enchufe
+ y funciona.
+ No intentas conectarlo directamente a la fuente de alimentación — hacerlo
+ sería muy ineficiente y, si no eres electricista, dificil y peligroso.
+ 
+\end_layout
+
+\begin_layout Subsection
+Para que sirve una API 
+\end_layout
+
+\begin_layout Verse
+Una de las principales funciones de las API es poder facilitarles el trabajo
+ a los desarrolladores y ahorrarles tiempo y dinero.
+ Por ejemplo, si estás creando una aplicación que es una tienda online,
+ no necesitarás crear desde cero un sistema de pagos u otro para verificar
+ si hay stock disponible de un producto.
+ Podrás utilizar la API de un servicio de pago ya existente, por ejemplo,
+ PayPal, y pedirle a tu distribuidor una API que te permita saber el stock
+ que ellos tienen.
+ Con ello, no será necesario tener que reinventar la rueda con cada servicio
+ que se crea, ya que podrás utilizar piezas o funciones que otros ya han
+ creado.
+ Imagínate que cada tienda online debiese tener su propio sistema de pago,
+ para los usuarios normales es mucho más cómodo poder hacerlo con los principale
+s servicios que casi todos utilizan.
+ También son útiles para cuando lo único que se quiere es utilizar deliberadamen
+te las funciones de determinado servicio para ofrecer ventajas a sus usuarios
+ o atraer a los usuarios de ese servicio a que utilicen tu aplicación.
+ Por ejemplo, piensa que quieres crear una aplicación que se conecte a las
+ publicaciones que hay en Twitter, pues para ello tendrás que conectar tu
+ aplicación al servicio mediante la API que Twitter tiene disponible para
+ los desarrolladores.
+ Y si quieres que esta aplicación se comunique con la barra de notificaciones
+ de un sistema operativo, pues también necesitará otra API del sistema operativo.
+ Piensa si no en cuando vas a comprar una entrada a través de la web de
+ una sala de cine.
+ Cuando pones la información de tu tarjeta, la web utiliza una API para
+ enviarle esa información de forma remota a otro programa que verifica si
+ tus datos son correctos o es una tarjeta inventada.
+ Una vez se verifica, este programa remoto le dice a la web que todo está
+ en orden, y está ya te emite tus entradas.
+ Otro ejemplo clásico es el de las aplicaciones de terceros para conectarse
+ a un servicio.
+ Por ejemplo, redes sociales como Twitter o Reddit permiten que se creen
+ aplicaciones diferentes a las oficiales para conectarse a ellas.
+ Estas aplicaciones necesitarán las API de las redes sociales para poder
+ mostrarte la información y los mecanismos internos que las hacen funcionar.
+ 
+\end_layout
+
+\begin_layout Verse
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename E:/2021-I/calidad de sw/u2/Pruebas-de-framework/imagenes/19_Api_testing.jpg
+	width 5bp
+	height 5bp
+	keepAspectRatio
+	BoundingBox 0bp 0bp 920bp 80bp
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Configuración del entorno de prueba de API 
+\end_layout
+
+\begin_layout Verse
+Las pruebas de API son diferentes de otros tipos de pruebas de software,
+ ya que la GUI no está disponible y, sin embargo, debe configurar el entorno
+ inicial que invoca la API con un conjunto de parámetros requerido y, finalmente
+, examina el resultado de la prueba.
+ Por lo tanto, configurar un entorno de pruebas para las pruebas de automatizaci
+ón de API parece un poco complejo.
+ La base de datos y el servidor deben configurarse según los requisitos
+ de la aplicación.
+ Una vez realizada la instalación, se debe llamar a la función de API para
+ comprobar si esa API funciona.
+ 
+\end_layout
+
+\begin_layout Subsection
+Casos de prueba para pruebas de API: 
+\end_layout
+
+\begin_layout Verse
+Los casos de prueba de las pruebas de API se basan en Valor devuelto basado
+ en la condición de entrada: es relativamente fácil de probar, ya que la
+ entrada se puede definir y los resultados se pueden autenticar No devuelve
+ nada: Cuando no hay ningún valor devuelto, un comportamiento de API en
+ el sistema que se va a comprobar Desencadenar alguna otra API/evento/interrupci
+ón: Si una salida de una API desencadena algún evento o interrupción, se
+ debe realizar un seguimiento de esos eventos y escuchas de interrupción.
+ Actualizar estructura de datos: La actualización de la estructura de datos
+ tendrá algún resultado o efecto en el sistema, y eso debe autenticarse
+ Modificar ciertos recursos: Si la llamada a la API modifica algunos recursos,
+ debe validarse accediendo a los recursos respectivos 
+\end_layout
+
+\begin_layout Subsection
+Cómo probar la API 
+\end_layout
+
+\begin_layout Verse
+Las pruebas de automatización de API deben cubrir al menos los siguientes
+ métodos de prueba aparte del proceso SDLC habitual Pruebas de detección:
+ El grupo de prueba debe ejecutar manualmente el conjunto de llamadas documentad
+as en la API, como la comprobación de que un recurso específico expuesto
+ por la API se puede enumerar, crear y eliminar según corresponda Pruebas
+ de usabilidad: Esta prueba comprueba si la API es funcional y fácil de
+ usar.
+ Y api se integra bien con otra plataforma, así Pruebas de seguridad: Esta
+ prueba incluye qué tipo de autenticación se requiere y si los datos confidencia
+les se cifran a través de HTTP o ambos Pruebas automatizadas: Las pruebas
+ de API deben culminar en la creación de un conjunto de scripts o una herramient
+a que se pueda usar para ejecutar la API regularmente Documentación: El
+ equipo de pruebas tiene que asegurarse de que la documentación es adecuada
+ y proporciona suficiente información para interactuar con la API.
+ La documentación debe formar parte de la entrega final 
+\end_layout
+
+\begin_layout Subsection
+Prácticas recomendadas de pruebas de API: 
+\end_layout
+
+\begin_layout Verse
+Los casos de prueba de API deben agruparse por categoría de prueba Además
+ de cada prueba, debe incluir las declaraciones de las API a las que se
+ llama.
+ La selección de parámetros debe mencionarse explícitamente en el propio
+ caso de prueba Priorizar las llamadas a funciones de API para que sea fácil
+ de probar para los evaluadores Cada caso de prueba debe ser lo más autónomo
+ e independiente posible de las dependencias Evite el "encadenamiento de
+ pruebas" en el desarrollo Se debe tener especial cuidado al manejar funciones
+ de llamada de una sola vez como - Delete, CloseWindow, etc.
+ La secuenciación de llamadas debe realizarse y planificarse bien Para garantiza
+r una cobertura de prueba completa, cree casos de prueba de API para todas
+ las combinaciones de entrada posibles de la API.
+ 
+\end_layout
+
+\begin_layout Verse
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/APIs.jpg
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+KATALON 
+\end_layout
+
+\begin_layout Verse
+Katalon es una herramienta de automatización de pruebas de código abierto
+ de KMS Technology.
+ Katalon Es una GUI muy simple y fácil de usar que permite que los usuarios
+ no técnicos también escriban la prueba.
+ Katalon está construido sobre Selenium y Appium, también eliminará las
+ complejidades que hacen que el comprobador sea más cómodo.
+ La plataforma básica de Katalon es solo Eclipse, por lo que tendrás la
+ misma sensación al trabajar con Katalon.
+ 
+\end_layout
+
+\begin_layout Subsection
+Características de Katalon Studio 
+\end_layout
+
+\begin_layout Subsubsection
+Katalon nos permite automatizar aplicaciones web, aplicaciones móviles y
+ pruebas API.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Código abierto - Descargue y comience a usar en este momento.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+En Build Library que ahorra mucho tiempo para un tester.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Grabación y reproducción para aplicaciones web y móviles.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Katalon tiene varias características como: 
+\end_layout
+
+\begin_layout Itemize
+Creación de Test Case : creación de Test Suite, Test Suite y captura de
+ objetos utilizando Object Spy como QTP.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ejecución de prueba: la ejecución es bastante fácil con los botones rápidos.
+ También nos permite ejecutar nuestra prueba en una configuración diferente.
+ Podemos activar la prueba en modo secuencial o en modo paralelo.
+ 
+\end_layout
+
+\begin_layout Itemize
+Mantenimiento : crea automáticamente un depósito de objetos y mantiene nuestro
+ objeto de prueba, lo que facilita el mantenimiento.
+ 
+\end_layout
+
+\begin_layout Itemize
+Podemos segregar datos de prueba, repositorio de objetos, biblioteca, casos
+ de prueba, suites de prueba.
+ 
+\end_layout
+
+\begin_layout Itemize
+Integración con Git y GitHub, integración de Jenkins, etc.
+ 
+\end_layout
+
+\begin_layout Itemize
+Informe: Katalon crea informes automáticamente y podemos exportar el informe
+ en diferentes formatos, como CSV, HTML, PDF, etc.
+ 
+\end_layout
+
+\begin_layout Verse
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename E:/2021-I/calidad de sw/u2/Pruebas-de-framework/imagenes/katalon1x-min.png
+	rotateOrigin centerTop
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Selenium 
+\end_layout
+
+\begin_layout Subsection
+¿Qué es Selenium? 
+\end_layout
+
+\begin_layout Verse
+Selenium es un entorno de pruebas que se utiliza para comprobar si el software
+ que se está desarrollando funciona correctamente.
+ Esta herramienta permite: grabar, editar y depurar casos de pruebas que
+ se pueden automatizar.
+ Lo interesante de Selenium es que se pueden editar acciones o crearlas
+ desde cero.
+ También ayuda mucho en las pruebas de regresión porque consigue pruebas
+ automatizadas que luego se pueden reutilizar cuando se necesite.
+ Comenzó a desarrollarse en 2004 por Jason Huggins y poco a poco se fueron
+ uniendo varios especialistas.
+ Un gran detalle es que este software es de código abierto (bajo licencia
+ apache 2.0) y puede ser descargado y usado sin pagar.
+ Como curiosidad hay que indicar que el significado de Selenium surgió a
+ raíz de un comentario que Jason Huggins le hizo a un competidor de aquella
+ época llamado Mercurio: el envenenamiento por mercurio se puede curar con
+ Selenio.
+ Esto provocó que la mayoría de las personas que lo escucharon empezasen
+ a llamar al proyecto de Huggins, “Selenium”.
+ 
+\end_layout
+
+\begin_layout Subsection
+Principales características de Selenium 
+\end_layout
+
+\begin_layout Verse
+Las acciones serán ejecutadas punto a punto, si así se considera.
+ A la hora de escribir el código tiene la opción de autocompletar.
+ Se puede referenciar a objetos DOM: nombre, ID o con XPath.
+ Ejecutar test complejos que ahorran muchas horas de trabajo.
+ Gran depuración y puntos de verificación Almacenamiento en varios formatos
+ los test realizados.
+\end_layout
+
+\begin_layout Verse
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename E:/2021-I/calidad de sw/u2/Pruebas-de-framework/imagenes/descarga (2).png
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Comparación Selenium vs Katalon 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename E:/2021-I/calidad de sw/u2/Pruebas-de-framework/imagenes/descarga.png
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Conclusiones
+\end_layout
+
+\begin_layout Verse
+Las pruebas en un proyecto de APIs son fundamentales, nos garantizan que
+ podemos hacer cambios de versiones, actualizaciones, corrección de bugs
+ o nuevas implementaciones garantizando que la especificación coincide con
+ el método y que cualquier cliente que va a consumir nuestras APIs lo puede
+ hacer sin ningún problema.
+ Selenium es una de las mejores herramientas de testing actual.
+ Es muy avanzada y permite gestionar casi cualquier necesidad que tenga
+ un especialista.
+ No es un programa sencillo y necesita un amplio conocimiento de programación
+ para poder utilizarlo.
+ La única desventaja, que se puede considerar como tal, es la dificultad
+ de aprendizaje, pero ocurre lo mismo en otras herramientas o lenguajes
+ de programación.
+ 
+\end_layout
+
+\begin_layout Section*
+Recomendaciones 
+\end_layout
+
+\begin_layout Enumerate
+Planificación previa desde el inicio de la estimación de casos de prueba,
+ es aconsejable asignar prioridades de ejecución Alta, Media, Baja y palabras
+ clave como regresión, Sanidad, etcétera para los casos de prueba.
+ De esta manera se puede hacer un filtrado rápido por prioridades y etiquetas,
+ que permitan diferenciar rápidamente cuales deber ser los casos más importantes.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Uso de técnicas de diseño de casos de prueba Entidades como International
+ Software Testing Qualifications Boardy American Society for Quality mencionan
+ varias tecnicas para la creación de casos de prueba que permiten una mejora,
+ de tal manera que al aplicarlas se obtienen menos casos de prueba y un
+ mayor factor de cobertura o bien una base de creación empírica.
+ Al tener un menor número de casos de prueba, se reducen las pruebas exhaustivas
+ y tiempos de ejecución.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Clasificación adecuada mediante suites.
+ La división de casos de prueba según los módulos de un sistema facilitara
+ la selección de casos al momento de construir un Plan de Pruebas para regresión.
+ En las carpetas o suites deberían evitarse nombres ambiguos o diferentes
+ a lo definido en el requerimiento, o en los nombres que se muestran en
+ el sistema.
+ Si la herramienta de manejo de casos de prueba lo permite, lo ideal es
+ organizar las suites mediante jerarquías según la misma aplicación para
+ que la selección de casos de prueba por componente pueda ser natural.
+ Por ejemplo, si el módulo ”Transferencias” tiene como opciones ”Transferencias
+ locales”, ”Transferencias a terceros”, ”Transferencias internacionales”,
+ deber´ıa existir un folder padre llamado ”TRANSFERENCIAS”, con 3 carpetas
+ hijas, de manera tal que la carpeta llamada ”Transferencias” tenga como
+ opciones ”Transferencias locales”, ”Transferencias a terceros”, ”Transferencias
+ internacionales”.
+ Este tipo de organización es útil para mantener los casos de prueba ordenados
+ y agilizar la búsqueda de casos de prueba.
+ Sin embargo, no se debe abusar de la jerarquía, pues llegar a tener más
+ de 4 o 5 niveles de profundidad se torna poco eficiente.
+ 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-3"
+
+\end_inset
+
+Tutorial de pruebas de API: ¿Qué es la automatización de pruebas de API?
+ Cómo probar (guru99.com) 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-4"
+
+\end_inset
+
+API REST de partners de Microsoft - Partner | Microsoft Docs 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-5"
+
+\end_inset
+
+Repositorio Digital Universidad Técnica del Norte: Análisis de frameworks
+ de desarrollo de api rest y su impacto en el rendimiento de aplicaciones
+ web con arquitectura Spa (utn.edu.ec) 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-6"
+
+\end_inset
+
+Articles > Page #1 (infoq.com) 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-7"
+
+\end_inset
+
+Introducción a Selenium: Cómo funciona, Características y Opciones (digital55.com
+) 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-8"
+
+\end_inset
+
+Tutorial para usar Selenium: conceptos básicos y primeros pasos - IONOS
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-9"
+
+\end_inset
+
+https://javiermartinalonso.github.io/drafts/testing/katalon/2018-12-31-katalon.html
+ 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-10"
+
+\end_inset
+
+https://www.softwaretestinghelp.com/selenium-vs-katalon-studio/ 
+\end_layout
+
+\end_body
+\end_document
